@@ -1,1 +1,93 @@
-<p>register works!</p>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div class="cards">
+      <div class="card-title text-center">
+        <h2>Register</h2>
+      </div>
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="mb-3">
+          <label for="email" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            required
+            minlength="3"
+            formControlName="username"
+          />
+          <div
+            *ngIf="
+              (registerForm.get('username').invalid &&
+                registerForm.get('username').touched) ||
+              registerForm.get('email').dirty
+            "
+          >
+            <small
+              *ngIf="registerForm.get('username').errors?.required"
+              class="text-danger"
+              >Username is required</small
+            >
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            required
+            aria-describedby="emailHelp"
+            minlength="3"
+            formControlName="email"
+          />
+          <div
+            *ngIf="
+              (registerForm.get('email').invalid &&
+                registerForm.get('email').touched) ||
+              registerForm.get('email').dirty
+            "
+          >
+            <small
+              *ngIf="registerForm.get('email').errors?.required"
+              class="text-danger"
+              >Email is required</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            required
+            formControlName="password"
+          />
+          <div
+            *ngIf="
+              (registerForm.get('password').invalid &&
+                registerForm.get('password').touched) ||
+              registerForm.get('email').dirty
+            "
+          >
+            <small
+              *ngIf="registerForm.get('password').errors?.required"
+              class="text-danger"
+              >Password is required</small
+            >
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!registerForm.valid"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-2"></div>
+</div>

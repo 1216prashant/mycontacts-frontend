@@ -1,0 +1,15 @@
+.cards{
+    margin-top: 120px;
+    padding: 20px;
+    max-width: 600px;
+    height: 80%;
+    border-radius: 10px;
+    border: 1px solid #d3d2d2;
+    background-color: #EAEAEA;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  }

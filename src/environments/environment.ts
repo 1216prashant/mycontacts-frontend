@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'https://mycontacts-backend-7327.onrender.com',
+  loginUrl: 'https://mycontacts-backend-7327.onrender.com/api/users/login',
+  registerUrl:
+    'https://mycontacts-backend-7327.onrender.com/api/users/register',
+  getContactsUrl: 'https://mycontacts-backend-7327.onrender.com/api/contacts',
 };
 
 /*
