@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
       (res) => {
         if (res.message === 'Login Success') {
           localStorage.setItem('accessToken', res.accessToken);
-          this.router.navigate(['/', 'dashboard']);
+          this.router.navigate(['/dashboard', 'home']);
         }
-        this.autoLogout(res.expiresIn)
+        this.autoLogout() //to logout user after 5 mins
       },
       (err) => {
         console.log(err);
@@ -43,10 +43,10 @@ export class LoginComponent implements OnInit {
    
   }
 
-  autoLogout(expirationDate: number) {
+  autoLogout() {
     setTimeout(() => {
       localStorage.removeItem('accessToken');
       this.router.navigate(['/', 'login']);
-    }, expirationDate);
+    }, 300000);
   }
 }

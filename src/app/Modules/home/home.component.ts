@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { DashboardServiceService } from 'src/app/Services/dashboard-service.service';
 
 @Component({
-  selector: 'app-dashboard-component',
-  templateUrl: './dashboard-component.component.html',
-  styleUrls: ['./dashboard-component.component.css'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class DashboardComponentComponent implements OnInit {
+export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private dashboardService: DashboardServiceService
@@ -37,4 +37,5 @@ export class DashboardComponentComponent implements OnInit {
       }
     );
   }
+
 }

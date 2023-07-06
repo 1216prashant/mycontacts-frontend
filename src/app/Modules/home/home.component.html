@@ -1,0 +1,18 @@
+<div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="card" *ngFor="let contact of contacts">
+          <div class="card-body">
+            <h5 class="card-title">{{ contact.name }}</h5>
+            <p class="card-text">
+              <strong>User Id:</strong> {{ contact._id }}<br>
+              <strong>User Email: </strong> {{ contact.email }}<br>
+              <strong>User Phone:</strong> {{ contact.phone }}<br>
+              <strong>User created :</strong> {{ contact.createdAt | date:'dd-MM-yyyy hh:mm:ss a' }}<br>
+              <strong>User updated:</strong> {{ contact.updatedAt | date:'dd-MM-yyyy hh:mm:ss a'}}<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
