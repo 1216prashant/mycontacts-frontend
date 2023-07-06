@@ -34,10 +34,19 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('accessToken', res.accessToken);
           this.router.navigate(['/', 'dashboard']);
         }
+        this.autoLogout(res.expiresIn)
       },
       (err) => {
         console.log(err);
       }
     );
+   
+  }
+
+  autoLogout(expirationDate: number) {
+    setTimeout(() => {
+      localStorage.removeItem('accessToken');
+      this.router.navigate(['/', 'login']);
+    }, expirationDate);
   }
 }
