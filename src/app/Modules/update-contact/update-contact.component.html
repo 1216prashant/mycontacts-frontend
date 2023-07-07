@@ -1,0 +1,54 @@
+<div>
+    <div class="container-fluid">
+  <div class="row">
+    
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div class="card-title text-center">
+          <h2>Update Contact</h2>
+        </div>
+        <form [formGroup]="updateContactForm" (ngSubmit)="updateContact()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              required
+              formControlName="name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              required
+              formControlName="email"
+            />
+            
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input
+              type="number"
+              class="form-control"
+              id="phone"
+              required
+              formControlName="phone"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!updateContactForm.valid"
+          >
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,9 @@
               <strong>User Phone:</strong> {{ contact.phone }}<br>
               <strong>User created :</strong> {{ contact.createdAt | date:'dd-MM-yyyy hh:mm:ss a' }}<br>
               <strong>User updated:</strong> {{ contact.updatedAt | date:'dd-MM-yyyy hh:mm:ss a'}}<br>
+              <a class="btn btn-primary" routerLink="/dashboard/update-contact/{{contact._id}}"><i class="fa fa-user"></i>Edit</a> &nbsp;
+              <a class="btn btn-danger" (click)="deleteContact(contact._id)">Delete</a>
+
             </p>
           </div>
         </div>

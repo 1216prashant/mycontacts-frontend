@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
 import { CreateContactComponent } from '../create-contact/create-contact.component';
 import { HomeComponent } from '../home/home.component';
+import { UpdateContactComponent } from '../update-contact/update-contact.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'create-contact', component: CreateContactComponent },
+      { path: 'update-contact/:id', component: UpdateContactComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: '**', redirectTo: 'dashboard' },
     ],

@@ -34,7 +34,7 @@ export class CreateContactComponent implements OnInit {
     this.createContactService.create(this.createContactForm.value).subscribe(
       (res) => {
         if (res.message === 'Create Success') {
-          alert('Contact Create Successfully');
+          alert('Contact Created Successfully');
           this.router.navigate(['/', 'dashboard']);
         } else {
           alert('Something Went Wrong');

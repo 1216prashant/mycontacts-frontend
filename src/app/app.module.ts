@@ -16,7 +16,7 @@ import {
   NgxUiLoaderModule,
   NgxUiLoaderRouterModule,
 } from 'ngx-ui-loader';
-
+import { UpdateContactComponent } from './Modules/update-contact/update-contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +24,8 @@ import {
     HeaderComponent,
     CreateContactComponent,
     HomeComponent,
+    UpdateContactComponent,
+  
   ],
   imports: [
     BrowserModule,
