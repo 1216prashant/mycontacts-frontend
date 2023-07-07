@@ -19,22 +19,9 @@ export class DashboardComponentComponent implements OnInit {
     if (!accessToken) {
       this.router.navigate(['/', 'login']);
     }
-    this.getContact()
+    //this.getContact()
+    
   }
 
-  getContact() {
-    this.dashboardService.getContacts().subscribe(
-      (res) => {
-        this.contacts = res;
-        
-      },
-      (err) => {
-        console.log(err);
-        if(err.error.title === 'Unauthorized'){
-          localStorage.removeItem('accessToken');
-          this.router.navigate(['/', 'login']);
-        }
-      }
-    );
-  }
+
 }

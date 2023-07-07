@@ -11,9 +11,20 @@ import { HttpInterceptorInterceptor } from './httpInterceptor/http-interceptor.i
 import { HeaderComponent } from './Modules/header/header.component';
 import { CreateContactComponent } from './Modules/create-contact/create-contact.component';
 import { HomeComponent } from './Modules/home/home.component';
+import {
+  NgxUiLoaderHttpModule,
+  NgxUiLoaderModule,
+  NgxUiLoaderRouterModule,
+} from 'ngx-ui-loader';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponentComponent, HeaderComponent, CreateContactComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponentComponent,
+    HeaderComponent,
+    CreateContactComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,9 +32,18 @@ import { HomeComponent } from './Modules/home/home.component';
     FormsModule,
     HttpClientModule,
     AuthModuleModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderRouterModule.forRoot({showForeground:true}),
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true,
+    }),
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass:HttpInterceptorInterceptor, multi: true}
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })

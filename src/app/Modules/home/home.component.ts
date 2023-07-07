@@ -5,7 +5,7 @@ import { DashboardServiceService } from 'src/app/Services/dashboard-service.serv
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   constructor(
@@ -19,23 +19,21 @@ export class HomeComponent implements OnInit {
     if (!accessToken) {
       this.router.navigate(['/', 'login']);
     }
-    this.getContact()
+    this.getContact();
   }
 
   getContact() {
     this.dashboardService.getContacts().subscribe(
       (res) => {
         this.contacts = res;
-        
       },
       (err) => {
         console.log(err);
-        if(err.error.title === 'Unauthorized'){
+        if (err.error.title === 'Unauthorized') {
           localStorage.removeItem('accessToken');
           this.router.navigate(['/', 'login']);
         }
       }
     );
   }
-
 }
