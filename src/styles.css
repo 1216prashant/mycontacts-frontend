@@ -3,3 +3,8 @@ body {
     background-color: #fff;
     overflow: hidden;
   }
+
+  .card{
+    width: 400px !important;
+     margin: 20px !important
+}

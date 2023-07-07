@@ -19,16 +19,9 @@ export class DashboardComponentComponent implements OnInit {
     if (!accessToken) {
       this.router.navigate(['/', 'login']);
     }
+    //this.getContact()
+    
   }
 
-  getContact() {
-    this.dashboardService.getContacts().subscribe(
-      (res) => {
-        this.contacts = res;
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
+
 }

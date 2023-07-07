@@ -1,0 +1,95 @@
+<div>
+    <div class="container-fluid">
+  <div class="row">
+    
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div class="card-title text-center">
+          <h2>Create Contact</h2>
+        </div>
+        <form [formGroup]="createContactForm" (ngSubmit)="createContact()">
+          <div class="mb-3">
+            <label for="email" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              required
+              minlength="3"
+              formControlName="name"
+            />
+            <div
+              *ngIf="
+                (createContactForm.get('name').invalid &&
+                  createContactForm.get('name').touched) ||
+                createContactForm.get('name').dirty
+              "
+            >
+              <small
+                *ngIf="createContactForm.get('name').errors?.required"
+                class="text-danger"
+                >Name is required</small
+              >
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              required
+              aria-describedby="emailHelp"
+              minlength="3"
+              formControlName="email"
+            />
+            <div
+              *ngIf="
+                (createContactForm.get('email').invalid &&
+                  createContactForm.get('email').touched) ||
+                createContactForm.get('email').dirty
+              "
+            >
+              <small
+                *ngIf="createContactForm.get('email').errors?.required"
+                class="text-danger"
+                >Email is required</small
+              >
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input
+              type="number"
+              class="form-control"
+              id="phone"
+              required
+              formControlName="phone"
+            />
+            <div
+              *ngIf="
+                (createContactForm.get('phone').invalid &&
+                  createContactForm.get('phone').touched) ||
+                createContactForm.get('phone').dirty
+              "
+            >
+              <small
+                *ngIf="createContactForm.get('phone').errors?.required"
+                class="text-danger"
+                >Phone is required</small
+              >
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!createContactForm.valid"
+          >
+            Create
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

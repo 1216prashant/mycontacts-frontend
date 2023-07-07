@@ -9,6 +9,8 @@ export const environment = {
   registerUrl:
     'https://mycontacts-backend-7327.onrender.com/api/users/register',
   getContactsUrl: 'https://mycontacts-backend-7327.onrender.com/api/contacts',
+  createContactUrl: 'https://mycontacts-backend-7327.onrender.com/api/contacts',
+  getUserInfo:'https://mycontacts-backend-7327.onrender.com/api/users/currentuser'
 };
 
 /*
